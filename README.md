@@ -18,10 +18,10 @@ BuyMeTea Clone is a web application that mimics the functionality of a popular o
 ## Features
 
 - User authentication and authorization
-- Browse, search, and filter tea products
-- Add products to the cart
-- Place orders and track order status
-- Admin dashboard for managing products, orders, and users
+- Creator profiles
+- Supporters can make one-time or recurring donations
+- Payment integration (e.g., PayPal, Stripe)
+- Track funding progress 
 
 ## Installation
 
