@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 # BuyMeTea Clone
 
-BuyMeTea Clone is a web application that mimics the functionality of a popular online beverage ordering platform. Built using Next.js, React.js, Node.js, and MongoDB.
+BuyMeTea Clone is a web application that allows fans to support and fund their favorite developers, content creators, and YouTubers. Built using Next.js, React.js, Node.js, and MongoDB.
 
 ## Table of Contents
 
