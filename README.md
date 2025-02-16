@@ -1,5 +1,37 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+
+# BuyMeTea Clone
+
+BuyMeTea Clone is a web application that mimics the functionality of a popular online beverage ordering platform. Built using Next.js, React.js, Node.js, and MongoDB.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- User authentication and authorization
+- Browse, search, and filter tea products
+- Add products to the cart
+- Place orders and track order status
+- Admin dashboard for managing products, orders, and users
+
+## Installation
+
+To install and run the project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/yourusername/buymeateaclone.git
+   cd buymeateaclone
+
 ## Getting Started
 
 First, run the development server:
