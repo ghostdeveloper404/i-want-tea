@@ -1,8 +1,27 @@
 "use client"
 import React from 'react'
 import { useSession , signIn, signOut } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 const Login = () => {
+    const { data: session, status } = useSession()
+    const router = useRouter()
+  
+    useEffect(() => {
+        document.title = 'Login - i only want tea'
+      if (status === 'authenticated') {
+        router.push(`/Dashboard`)
+      }
+    }, [status, router])
+  
+    if (status === 'loading') {
+      return <div className='items-center flex flex-col m-11 text-center justify-center'>
+      < img width={80} src="teacup.gif" alt="logo" />
+      Loading...
+      </div>
+    }
+
   return (
     <div className='text-white py-14 container mx-auto'>
        <h1 className='font-bold text-center text-3xl'>Login/Signup to  Get your fans to support you </h1>
@@ -27,7 +46,7 @@ const Login = () => {
                 <span className="ml-2">Github</span>
             </a>
         </li>
-        <li className="my-4"><a href="#" aria-label="INSTAGRAM" target="_blank" rel="noopener"
+        <li className="my-4"><a onClick={() => {signIn("google")}} href="#" aria-label="GOOGLE" target="_blank" rel="noopener"
                 className="w-min flex  items-center hover:underline bg-white px-32 py-1 rounded-md text-black transition hover:translate-x-2 hover:no-underline"><svg
                     height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
                     <linearGradient id="instagram_svg__a" gradientTransform="matrix(0 -1.982 -1.844 0 -2.292 23.869)"
@@ -38,7 +57,7 @@ const Login = () => {
                     </linearGradient>
                     <path
                         d="M12.004.5c-6.055 0-7.213-.158-8.727.597C1.883 1.791.882 3.104.628 4.863.55 5.4.528 5.51.523 8.258c-.02 10.161-.154 10.92.576 12.434a4.838 4.838 0 003.134 2.566c1.093.282 1.82.242 7.747.242 4.968 0 6.513.089 7.802-.244a4.811 4.811 0 003.134-2.571c.736-1.522.563-2.598.563-8.692 0-5.836.197-7.135-.575-8.709a4.567 4.567 0 00-.982-1.349C20.194.281 18.136.505 15.741.5h-3.737z"
-                        fill="url(#instagram_svg__a)"></path>
+                        fill="url(#google_svg__a)"></path>
                     <path
                         d="M12 17.537c-3.053 0-5.537-2.484-5.537-5.537S8.947 6.463 12 6.463 17.537 8.947 17.537 12 15.053 17.537 12 17.537zM18.359 6.514a.874.874 0 11.002-1.748.874.874 0 01-.002 1.748z"
                         fill="#fff"></path>
@@ -50,7 +69,7 @@ const Login = () => {
                         d="M12 18.13c3.38 0 6.13-2.75 6.13-6.13S15.38 5.87 12 5.87 5.87 8.62 5.87 12s2.75 6.13 6.13 6.13zm0-10.76c2.553 0 4.63 2.077 4.63 4.63s-2.077 4.63-4.63 4.63S7.37 14.553 7.37 12 9.447 7.37 12 7.37zM18.358 7.362c.986 0 1.729-.74 1.729-1.721 0-1.023-.782-1.721-1.728-1.721-.986 0-1.729.74-1.729 1.721 0 1.021.778 1.721 1.728 1.721zm.177-1.886c.316.279-.405.618-.405.166 0-.27.367-.2.405-.166z">
                     </path>
                 </svg>
-                <span className="ml-2">Instagram</span>
+                <span className="ml-2">google</span>
             </a>
         </li>
         <li className="my-4"><a href="#" aria-label="LINKEDIN" target="_blank" rel="noopener"
@@ -114,3 +133,4 @@ const Login = () => {
 }
 
 export default Login
+
